@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import RecButton from "./RecButton";
 
-function App() {
+function App(props) {
+  const value = Math.random() > Math.random();
+  console.log(value);
+  let par = null;
+  if (value) {
+    par = <p>true</p>;
+  } else {
+    par = <p>false</p>;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>Пример 1 если использовать if {par}</div>
+
+      <div>
+        Пример 2 через тернарный оператор{value ? <p>true</p> : <p>false</p>}
+      </div>
+      <hr />
+      <p>Рекурсивная кнопка </p>
+      <RecButton />
     </div>
   );
 }
